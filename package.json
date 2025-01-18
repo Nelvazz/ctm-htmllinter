@@ -1,0 +1,37 @@
+{
+  "name": "ctm-htmllinter",
+  "version": "1.0.0",
+  "description": "A package to follow consistency in your HTML writing.",
+  "main": "bin/cli.js",
+  "bin": {
+    "ctm-htmllinter": "./bin/cli.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "ctm-htmllinter": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nelvazz/ctm-htmllinter.git"
+  },
+  "keywords": [
+    "syntax",
+    "linter",
+    "html",
+    "w3c",
+    "web",
+    "custom"
+  ],
+  "author": "nelvazz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nelvazz/ctm-htmllinter/issues"
+  },
+  "homepage": "https://github.com/Nelvazz/ctm-htmllinter#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "parse5": "^7.2.1"
+  }
+}

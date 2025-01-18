@@ -1,0 +1,7 @@
+{
+    "rules": {
+        "avoidEmptyAlt": true,
+        "noDuplicateId": true
+    },
+    "ignore": ["node_modules"]
+}

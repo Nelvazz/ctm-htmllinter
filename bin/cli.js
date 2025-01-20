@@ -56,7 +56,7 @@ function getAllFiles(folderPath) {
     return FILES;
 }
 
-function lintFile(file) {
+async function lintFile(file) {
     const CODE = FS.readFileSync(PATH.resolve(file), "utf8");
     const RESULTS = lint({
         name: PATH.parse(file).base,
@@ -71,4 +71,6 @@ function lintFile(file) {
             console.log(`${RESULTS.length !== idx + 1 ? "├" : "└"}`.gray + ` ${idx + 1}. ${issue.message}`.yellow)
         );
     }
+
+    await new Promise(resolve => setTimeout(resolve, 1000000000));
 }

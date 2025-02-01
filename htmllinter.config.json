@@ -1,7 +1,12 @@
 {
     "rules": {
         "avoidEmptyAlt": true,
-        "noDuplicateId": true
+        "noNestedCss": true,
+        "noDuplicateId": true,
+        "missingDoctype": true,
+        "consistentIndentation": 4,
+        "noTrailingWhitespace": true,
+        "fileNamingConvention": true
     },
     "ignore": ["node_modules"]
 }

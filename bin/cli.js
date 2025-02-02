@@ -20,6 +20,20 @@ switch (PARAMETER) {
         const FILES = getAllFiles(process.cwd());
         FILES.forEach(lintFile);
         break;
+    case '-i':
+    case '-init':
+        // Create default linting file inside project
+        FS.writeFileSync("./htmllinter.config.json", `{
+    "rules": {
+        "avoidEmptyAlt": true,
+        "noNestedCss": true,
+        "missingDoctype": true,
+        "consistentIndentation": 4,
+        "noTrailingWhitespace": true,
+        "fileNamingConvention": true
+    },
+    "ignore": ["folder"]
+}`)
     default:
         const TARGET = PATH.resolve(PARAMETER);
         if (!FS.existsSync(TARGET)) {
@@ -56,7 +70,7 @@ function getAllFiles(folderPath) {
     return FILES;
 }
 
-async function lintFile(file) {
+function lintFile(file) {
     const CODE = FS.readFileSync(PATH.resolve(file), "utf8");
     const RESULTS = lint({
         name: PATH.parse(file).base,
@@ -71,6 +85,4 @@ async function lintFile(file) {
             console.log(`${RESULTS.length !== idx + 1 ? "├" : "└"}`.gray + ` ${idx + 1}. ${issue.message}`.yellow)
         );
     }
-
-    await new Promise(resolve => setTimeout(resolve, 1000000000));
 }

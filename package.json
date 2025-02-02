@@ -1,6 +1,6 @@
 {
   "name": "ctm-htmllinter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to follow consistency in your HTML code writing.",
   "main": "bin/cli.js",
   "bin": {
